@@ -1,12 +1,17 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-class Solution {
+// https://leetcode.com/problems/find-the-difference/description/
+
+class Solution
+{
 public:
-    char findTheDifference(string s, string t) {
+    char findTheDifference(string s, string t)
+    {
         int diff = 0;
-        for(int i = 0; i < s.size(); i++){
+        for (int i = 0; i < s.size(); i++)
+        {
             diff ^= s[i] ^ t[i];
         }
         diff = diff ^ t[t.length() - 1];
@@ -14,27 +19,31 @@ public:
     }
 };
 
-
-class Solution {
+class Solution
+{
 public:
-    char findTheDifference(string s, string t) {
-        unordered_map<char,int> s1,s2;
+    char findTheDifference(string s, string t)
+    {
+        unordered_map<char, int> s1, s2;
 
-        for (auto aa: s){
+        for (auto aa : s)
+        {
             s1[aa]++;
         }
-        for(auto _a:t){
+        for (auto _a : t)
+        {
             s2[_a]++;
         }
-        for(char i : t){
-            if(s1[i]!=s2[i]){
+        for (char i : t)
+        {
+            if (s1[i] != s2[i])
+            {
                 return i;
             }
         }
         return 'x';
     }
 };
-
 
 // Intuition
 // The problem asks us to find one extra character in string t compared to string s. Since t has all characters from s plus one additional character, our goal is to identify that extra character efficiently.
@@ -70,20 +79,26 @@ public:
 // Space complexity: O(1) if sorting is done in-place, O(n) otherwise.
 
 // Code-1(Using Hash Table Approach)
-class Solution {
+class Solution
+{
 public:
-    char findTheDifference(string s, string t) {
+    char findTheDifference(string s, string t)
+    {
         int hash[26] = {0};
-        for(int i=0;i<s.size();i++){
-            hash[s[i]-'a']++;
+        for (int i = 0; i < s.size(); i++)
+        {
+            hash[s[i] - 'a']++;
         }
-        for(int j=0;j<t.size();j++){
-            hash[t[j]-'a']--;
+        for (int j = 0; j < t.size(); j++)
+        {
+            hash[t[j] - 'a']--;
         }
 
         char ans;
-        for(int k=0;k<26;k++){
-            if(hash[k] != 0){
+        for (int k = 0; k < 26; k++)
+        {
+            if (hash[k] != 0)
+            {
                 ans = 'a' + k;
                 break;
             }
@@ -93,31 +108,38 @@ public:
     }
 };
 // Code-2(Using XOR Approach)
-class Solution {
+class Solution
+{
 public:
-    char findTheDifference(string s, string t) {
+    char findTheDifference(string s, string t)
+    {
         char result = 0;
-        for(char c:s){
-            result^=c;
+        for (char c : s)
+        {
+            result ^= c;
         }
 
-        for(char c:t){
-            result^=c;
+        for (char c : t)
+        {
+            result ^= c;
         }
 
         return result;
     }
 };
 // Code-3(Using Sorting Approach)
-class Solution {
+class Solution
+{
 public:
-    char findTheDifference(string s, string t) {
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-        
+    char findTheDifference(string s, string t)
+    {
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
 
-        for(int i=0;i<t.size();i++){
-            if(s[i] != t[i]){
+        for (int i = 0; i < t.size(); i++)
+        {
+            if (s[i] != t[i])
+            {
                 return t[i];
             }
         }
