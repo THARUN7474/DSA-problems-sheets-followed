@@ -64,9 +64,7 @@ public:
     }
 };
 
-// it just that using 2 pointers ---one for checking and one for updating the array --inplace 
-
-
+// it just that using 2 pointers ---one for checking and one for updating the array --inplace
 
 // ### Explanation of the Code
 
