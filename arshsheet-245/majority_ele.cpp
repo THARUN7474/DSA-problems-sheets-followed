@@ -47,7 +47,7 @@ public:
             }
             if(x == ans){
                 i++;
-            }
+            } 
             else{
                 i--;
             }
