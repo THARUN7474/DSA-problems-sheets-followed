@@ -11,7 +11,7 @@ void printDups(string str)
     for (auto it : count) {
         // if the count of characters is greater than 1 then
         // duplicate found
-        if (it.second > 1)
+        if (it.second > 1) 
             cout << it.first << ", count = " << it.second
                  << "\n";
     }
