@@ -3,6 +3,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void moveZeroes(vector<int> &nums)
+{
+    int s = 0;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        // if(nums[i]==0){
+        //     s++;
+        // }
+        // else{
+        //     swap(nums[i],nums[i-s]);//either the way we are shifting the non zero to front be keep tracking no of 0 here
+        // }
+        if (nums[i] != 0)
+        {
+            swap(nums[s], nums[i]);
+            s++; // trackign number of non zeros--we are keeping non zero at there correct place
+        }
+    }
+};
+
 // Function which pushes all zeros to end
 void pushZerosToEnd(vector<int> &arr)
 {
