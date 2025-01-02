@@ -98,6 +98,14 @@ void rotateArr(vector<int>& arr, int d) {
   
     // Reverse the entire array
     reverse(arr.begin(), arr.end());
+
+
+    // orelse 
+    // int n = arr.size();
+    //     d = d%n;
+    //     reverse(arr.begin(),arr.begin()+d);
+    //     reverse(arr.begin(),arr.end());
+    //     reverse(arr.begin(),arr.begin()+n-d);
 }
 
 int main() {
