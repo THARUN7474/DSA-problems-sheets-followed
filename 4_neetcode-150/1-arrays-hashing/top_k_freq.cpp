@@ -138,6 +138,9 @@ public:
 };
 
 
+// Better approach using bucket sort 
+// Time complexity is O(n) and space complexity is O(n) 
+// This is efficient for the problem of finding top k frequent elements 
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
